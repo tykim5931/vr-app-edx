@@ -7,10 +7,11 @@ LDFLAGS = -framework GLUT -framework OpenGL -L./lib/mac/ \
 		-lGL -lGLU -lm -lstdc++ -lfreeimage
 else
 CFLAGS = -g -DGL_GLEXT_PROTOTYPES 
-INCFLAGS = -I./glm-0.9.7.1 -I./include/ -I/usr/X11R6/include -I/sw/include \
-		-I/usr/sww/include -I/usr/sww/pkg/Mesa/include
-LDFLAGS = -L/usr/X11R6/lib -L/sw/lib -L/usr/sww/lib -L./lib/nix/ \
-		-L/usr/sww/bin -L/usr/sww/pkg/Mesa/lib -lGLEW -lglut -lGLU -lGL -lX11 -lfreeimage
+INCFLAGS = -I./glm-0.9.7.1 -I/usr/X11/include -I/opt/homebrew/include -I./include/
+LDFLAGS = -framework GLUT -framework OpenGL \
+    -L"/usr/local/homebrew/lib" \
+    -L"/opt/homebrew/lib" \
+    -lGL -lGLU -lm -lstdc++ -lfreeimage
 endif
 
 RM = /bin/rm -f 
@@ -34,6 +35,3 @@ Geometry.o: Geometry.cpp Geometry.h Transform.h variables.h
 	$(CC) $(CFLAGS) $(INCFLAGS) -c Geometry.cpp
 clean: 
 	$(RM) *.o transforms *.png
-
-
- 

@@ -5,7 +5,7 @@
 // See FAQ for more details or if you're having problems.
 
 #include "Transform.h"
-#include <iostream>
+// #include <iostream>
 
 // Helper rotation function.  Please implement this.
 mat3 Transform::rotate(const float degrees, const vec3 &axis)
